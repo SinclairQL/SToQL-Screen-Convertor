@@ -1,0 +1,11 @@
+500 REMark ALTKEY maker for simplified lo-res screen conversion
+510 REMark to be used without changing the default settings
+520 REMark of the program - e.g. step-size, etc
+530 REMark the first altkey should be used for the first such
+540 REMark conversion. The second altkey is for subsequent conversions
+550 REMark
+560 REMark to use, choose your lo-res file with LOAD ST SCREEN and then
+570 REMark do the altkey when the CONVERT SCREEN option is highlighted
+580 :
+590 ALTKEY 'f',"   "&CHR$(240)&" "&CHR$(200)&" "&CHR$(240)&FILL$(CHR$(216),11)&" "&FILL$(CHR$(202),29)&FILL$(CHR$(218),155)&" "&CHR$(24)&"y"&CHR$(216)&" "&FILL$(CHR$(192),4)&"  "&CHR$(240)&CHR$(216)&" "&CHR$(200)&" "&FILL$(CHR$(194),42)&CHR$(240)&FILL$(CHR$(216),12)&"  "
+600 ALTKEY 's',"   "&CHR$(240)&" "&CHR$(200)&" "&CHR$(240)&FILL$(CHR$(216),11)&"  "&CHR$(24)&"y"&CHR$(216)&" "&FILL$(CHR$(192),4)&"  "&CHR$(240)&CHR$(216)&" "&CHR$(200)&" "&FILL$(CHR$(194),42)&CHR$(240)&FILL$(CHR$(216),12)&"  "

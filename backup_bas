@@ -1,0 +1,28 @@
+100 REMark COPY v1.01
+110 WINDOW 512,256,0,0:PAPER 0:CLS
+120 v$='1.29':dest$='flp1_':srce$='flp2_'
+130 MODE 4
+140 WINDOW 448,200,32,16:INK 4
+150 AT 0,22:CSIZE 2,0:UNDER 1
+160 PRINT 'SToQL v';v$
+170 UNDER 0:CSIZE 1,0:INK 7
+180 AT 5,0:PRINT 'MAKE A BACKUP FROM THE MASTER'
+190 PRINT \\'Please ensure that the original SToQL disk is in'!srce$!'and a blank disk is in'!dest$:INK 4:PRINT'Then press a key':INK 7
+200 PAUSE
+210 PAPER #0,0:INK #0,2
+220 PRINT #0,'Do you want to format'!dest$!'? (y/n)'
+230 x=KEYROW(0)
+240 REPeat keys:k$=INKEY$(-1):IF k$ INSTR 'yn':EXIT keys
+250 IF k$=='y'
+260   INPUT #0,'FORMAT'!(dest$)!'- enter medium name: ';m$
+270   INK 0:FORMAT dest$&m$:INK 7
+280 END IF
+290 INK #0,7
+300 RESTORE
+310 REPeat copies
+320   IF EOF:EXIT copies
+330   READ file$
+340   COPY srce$&file$ TO dest$&file$
+350 END REPeat copies
+360 PRINT \\\'COPYING complete - use LRUN'!dest$&'boot to start program'
+370 DATA 'boot','watch_neo','shortcut_bas','SToQL_obj','SToQL_rtm'
